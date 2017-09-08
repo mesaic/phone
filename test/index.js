@@ -909,3 +909,52 @@ describe('Testing KAZ Phone Quick Test', function() {
 	});
 
 });
+
+describe('Testing SWE Line Numbers', function() {
+
+	describe('Test 1', function() {
+		var number = '+46 8 12345',
+			country = 'SWE',
+			result = [];
+		it('returns ' + result, function() {
+			phone(number, country).should.eql(result);
+		});
+	});
+
+	describe('Test 2', function() {
+		var number = '+46 8 123456',
+			country = 'SWE',
+			result = ['+468123456', 'SWE'];
+		it('returns ' + result, function() {
+			phone(number, country).should.eql(result);
+		});
+	});
+
+	describe('Test 3', function() {
+		var number = '+46 8 1234567',
+			country = 'SWE',
+			result = ['+4681234567', 'SWE'];
+		it('returns ' + result, function() {
+			phone(number, country).should.eql(result);
+		});
+	});
+
+	describe('Test 4', function() {
+		var number = '+46 8 12345678',
+			country = 'SWE',
+			result = ['+46812345678', 'SWE'];
+		it('returns ' + result, function() {
+			phone(number, country).should.eql(result);
+		});
+	});
+
+	describe('Test 5', function() {
+		var number = '+46 8 123456789',
+			country = 'SWE',
+			result = [];
+		it('returns ' + result, function() {
+			phone(number, country).should.eql(result);
+		});
+	});
+
+});
